@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService.Protos";
+
+service RemoteEmployee {
+	rpc GetEmployeeInfo (EmployeeLookupModel) returns (EmployeeModel);
+}
+// The request message 
+message EmployeeLookupModel {
+  int32 EmployeeId = 1;
+}
+
+// The response message 
+message EmployeeModel {
+  int32 EmployeeId = 1;  
+  string EmployeeName = 2;
+  string EmployeeEmail = 3;
+  string EmployeeProfile = 4;
+}
